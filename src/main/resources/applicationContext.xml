@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--Load Properties-->
+    <context:property-placeholder location="classpath:employee.properties"/>
+
+    <!--Load Properties-->
+
+
+    <!-- Define your beans here -->
+
+
+    <bean id="javaprogrammer"
+          class="com.spring5we.ioc.xmlconf.JavaProgrammer">
+    </bean>
+    <bean id="cprogrammer"
+          class="com.spring5we.ioc.xmlconf.CProgrammer">
+    </bean>
+
+    <!-- Define your beans here -->
+
+    <!--Constructor Injection -->
+
+    <bean id="employee"
+          class="com.spring5we.ioc.xmlconf.constructorInj.Employee">
+        <constructor-arg type="String" value="SAIRAM"/>
+        <constructor-arg type="String" value="1212"/>
+    </bean>
+
+    <bean id="employer"
+          class="com.spring5we.ioc.xmlconf.constructorInj.Employer">
+        <constructor-arg ref="employee"/>
+    </bean>
+
+    <!--Constructor Injection -->
+    <!-- Setter Injection-->
+
+    <bean id="employeeSetter"
+          class="com.spring5we.ioc.xmlconf.setterInj.EmployeeSetter">
+        <property name="empName" value="SAIRAM"/>
+        <property name="dept" value="${emp.dept}"/>
+    </bean>
+
+    <bean id="employerSetter"
+          class="com.spring5we.ioc.xmlconf.setterInj.EmployerSetter">
+        <property name="employeeSetter" ref="employeeSetter"/>
+    </bean>
+
+    <!-- Setter Injection-->
+
+    <!--scope -->
+
+    <bean id="singletonbean" class="com.spring5we.ioc.xmlconf.scope.SingleTonBean" scope="singleton"/>
+    <bean id="prototypebean" class="com.spring5we.ioc.xmlconf.scope.PrototypeBean" scope="prototype"/>
+
+
+    <!--scope -->
+
+
+    <!--Life Cycle Methods-->
+    <bean id="singleTonLifeCycle" class="com.spring5we.ioc.xmlconf.lifecycle.SingleTonLifeCycle" scope="singleton"
+          init-method="init" destroy-method="cleanup"/>
+
+    <bean id="protoTyprLifeCycle" class="com.spring5we.ioc.xmlconf.lifecycle.ProtoTyprLifeCycle" scope="prototype"
+          init-method="init" destroy-method="cleanup"/>
+
+    <bean id="prototypeCustomDestroy" class="com.spring5we.ioc.xmlconf.lifecycle.PrototypeCustomDestroy"
+          scope="prototype"/>
+
+
+    <!--   Custom handler for cleaning up or in voking Destroy on prototyple bans-->
+    <bean id="prototypeestroyer" class="com.spring5we.ioc.xmlconf.lifecycle.Prototypeestroyer"/>
+
+    <!--Life Cycle Methods-->
+
+</beans>
+
+
+
+
+
+
