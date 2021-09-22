@@ -27,6 +27,8 @@ public class Prototypeestroyer implements ApplicationContextAware, DisposableBea
     @Override
     public void destroy() throws Exception {
 
+
+
         synchronized (prototypeBeans) {
             for (Object bean : prototypeBeans) {
                 if (bean instanceof DisposableBean) {

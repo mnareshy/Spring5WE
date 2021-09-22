@@ -78,6 +78,13 @@
             <version>5.3.8</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/org.aspectj/aspectjweaver -->
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>1.8.14</version>
+         </dependency>
+
         <!-- https://mvnrepository.com/artifact/org.wildfly.plugins/wildfly-maven-plugin -->
         <dependency>
             <groupId>org.wildfly.plugins</groupId>
@@ -98,6 +105,11 @@
             <artifactId>asm</artifactId>
             <version>3.3.1</version>
             <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>1.8.9</version>
         </dependency>
 
     </dependencies>

@@ -1,5 +1,6 @@
 package com.spring5we.ioc.xmlconf.lifecycle;
 
+import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class LifeCycleWe {
@@ -8,8 +9,8 @@ public class LifeCycleWe {
 
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 
-        context.getBean("singleTonLifeCycle");
-        context.getBean("protoTyprLifeCycle");
+//        context.getBean("singleTonLifeCycle");
+//        context.getBean("protoTyprLifeCycle");
 
         context.getBean("prototypeCustomDestroy");
 

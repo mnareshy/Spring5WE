@@ -82,6 +82,21 @@
     <!--   Custom handler for cleaning up or in voking Destroy on prototyple bans-->
     <bean id="prototypeestroyer" class="com.spring5we.ioc.xmlconf.lifecycle.Prototypeestroyer"/>
 
+    <!--    Aware Call Backs-->
+
+    <bean id = "awareCallbacks" class="com.spring5we.ioc.xmlconf.lifecycle.AwareCallBacks"/>
+
+    <!--    Aware Call Backs-->
+
+    <!--  Postprocessor Before and after initilization -->
+
+    <bean id = "Postprocessor" class="com.spring5we.ioc.xmlconf.lifecycle.PostProcessors"/>
+    <!--  Postprocessor Before and after initilization -->
+
+    <!--  InitilizingBean and DisposalBean -->
+    <bean id = "BeanInitilizeAndDisposalBean" class="com.spring5we.ioc.xmlconf.lifecycle.BeanInitilizeAndDisposalBean"/>
+
+    <!--  InitilizingBean and DisposalBean -->
     <!--Life Cycle Methods-->
 
 </beans>
